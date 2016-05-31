@@ -7,7 +7,7 @@ RUN apt-get update && \
       rsync \
       ssh \
       lftp \
-      python-paramiko && \
+      python-pexpect && \
     apt-get clean
 
 COPY config /root/.ssh/config
