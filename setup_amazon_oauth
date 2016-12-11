@@ -1,0 +1,2 @@
+duplicity /root/oauthsync ad:///deleteme/oauthsync
+cat /root/.duplicity_ad_oauthtoken.json

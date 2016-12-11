@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 MAINTAINER Thomas Steinbach <thomass@aikq.de>
 
 RUN apt-get update && \
@@ -8,9 +8,17 @@ RUN apt-get update && \
       ssh \
       lftp \
       python-paramiko \
-      python-pexpect && \
+      python-pexpect \
+      python-requests \
+      python-requests-oauthlib && \
     apt-get clean
 
+RUN mkdir /root/oauthsync && touch /root/oauthsync/DELETEME
+
+COPY setup_amazon_oauth /usr/local/bin/setup_amazon_oauth
+RUN chmod +x /usr/local/bin/setup_amazon_oauth
+
+COPY adbackend.py /usr/lib/python2.7/dist-packages/duplicity/backends/adbackend.py
 COPY config /root/.ssh/config
 
 ENTRYPOINT ["duplicity"]
