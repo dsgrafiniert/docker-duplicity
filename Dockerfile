@@ -10,7 +10,8 @@ RUN apt-get update && \
       python-paramiko \
       python-pexpect \
       python-requests \
-      python-requests-oauthlib && \
+      python-requests-oauthlib \
+      gettext-base && \
     apt-get clean
 
 RUN mkdir /root/oauthsync && touch /root/oauthsync/DELETEME
