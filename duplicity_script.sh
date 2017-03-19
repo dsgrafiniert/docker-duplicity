@@ -8,9 +8,6 @@ fi
 trap "rm -f ${LOCKFILE}; exit" INT TERM EXIT
 echo $$ > ${LOCKFILE}
 
-export HOME
-export PATH
-export PYTHONPATH=/opt/lib/python2.6/site-packages
 PASSPHRASE=$PASS
 SIGN_PASSPHRASE=$SIGN_PASS
 export PASSPHRASE
