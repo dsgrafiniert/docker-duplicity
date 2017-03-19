@@ -1,7 +1,7 @@
-Docker Unison
+Duplicity cron on Docker
 =============
 
-This image runs plain [duplicity](http://duplicity.nongnu.org/) as entrypoint on Ubuntu 15.10.
+This image runs [duplicity](http://duplicity.nongnu.org/) as a Cron-Job on Ubuntu 15.10.
 
 Use with Amazon Drive
 ---------------------
@@ -23,5 +23,7 @@ Licence
 -------
 
 The whole repository is licenced under BSD. Please mention following:
+github.com/dsgrafiniert (dominik at familie-schoen.com)
 
+it is based on [ThomasSteinbach/docker-duplicity](https://github.com/ThomasSteinbach/docker-duplicity)
 github.com/ThomasSteinbach (thomass at aikq.de)
