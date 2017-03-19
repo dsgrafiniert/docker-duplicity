@@ -20,7 +20,8 @@ RUN chmod +x /usr/local/bin/setup_amazon_oauth
 
 COPY adbackend.py /usr/lib/python2.7/dist-packages/duplicity/backends/adbackend.py
 COPY config /root/.ssh/config
-COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh
+COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh.template
+RUN envsubst < /opt/duplicity/duplicity_script.sh.template > /opt/duplicity/duplicity_script.sh
 COPY incexcllist /conf/incexcllist
 RUN chmod 0644 /opt/duplicity/duplicity_script.sh
 
