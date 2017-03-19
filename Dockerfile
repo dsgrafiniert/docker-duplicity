@@ -23,7 +23,6 @@ COPY adbackend.py /usr/lib/python2.7/dist-packages/duplicity/backends/adbackend.
 COPY config /root/.ssh/config
 COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh.template
 COPY incexcllist /conf/incexcllist
-RUN chmod 0644 /opt/duplicity/duplicity_script.sh
 
 
 # Add crontab file in the cron directory
