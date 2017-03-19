@@ -1,5 +1,5 @@
 FROM ubuntu:16.10
-MAINTAINER Thomas Steinbach <thomass@aikq.de>
+MAINTAINER Dominik Schoen <dominik@familie-schoen.com>
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
