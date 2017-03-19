@@ -20,6 +20,7 @@ RUN chmod +x /usr/local/bin/setup_amazon_oauth
 
 COPY adbackend.py /usr/lib/python2.7/dist-packages/duplicity/backends/adbackend.py
 COPY config /root/.ssh/config
+COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/hello-cron
