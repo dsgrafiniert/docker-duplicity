@@ -5,6 +5,7 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
       duplicity \
       rsync \
+      cron \
       ssh \
       lftp \
       python-paramiko \
@@ -22,6 +23,8 @@ RUN chmod +x /usr/local/bin/setup_amazon_oauth
 COPY adbackend.py /usr/lib/python2.7/dist-packages/duplicity/backends/adbackend.py
 COPY config /root/.ssh/config
 COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh.template
+COPY gpg-agent.conf /root/.gnupg/gpg-agent.conf
+RUN chmod 0644 /root/.gnupg/gpg-agent.conf
 COPY incexcllist /conf/incexcllist
 
 
