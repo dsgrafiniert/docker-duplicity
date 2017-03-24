@@ -41,8 +41,5 @@ RUN touch /var/log/cron.log
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-RUN ./usr/local/bin/entrypoint.sh
- 
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+ENTRYPOINT ["./usr/local/bin/entrypoint.sh"]
 
