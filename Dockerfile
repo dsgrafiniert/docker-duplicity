@@ -25,6 +25,7 @@ COPY config /root/.ssh/config
 COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh.template
 COPY gpg-agent.conf /root/.gnupg/gpg-agent.conf
 RUN chmod 0644 /root/.gnupg/gpg-agent.conf
+RUND chmod chmod 700 /root/.gnupg
 COPY incexcllist /conf/incexcllist
 
 
