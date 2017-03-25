@@ -16,7 +16,7 @@ export SIGN_PASSPHRASE
 
 gpg --list-keys > /dev/null
 gpg --import /certs/gpg-key.asc > /dev/null
-gpg --allow-secret-key-import --import /certs/gpg-secret-key.asc > /dev/null
+gpg --allow-secret-key-import --batch --import /certs/gpg-secret-key.asc > /dev/null
 gpg --import-ownertrust /certs/ownertrust.gpg.txt
 env PASSPHRASE=$PASS
 env SIGN_PASSPHRASE=$SIGN_PASS
