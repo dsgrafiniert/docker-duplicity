@@ -5,7 +5,6 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
       duplicity \
       rsync \
-      cron \
       ssh \
       lftp \
       python-paramiko \
@@ -27,17 +26,6 @@ COPY gpg-agent.conf /root/.gnupg/gpg-agent.conf
 RUN chmod 0644 /root/.gnupg/gpg-agent.conf
 RUN chmod 0700 /root/.gnupg
 COPY incexcllist /conf/incexcllist
-
-
-# Add crontab file in the cron directory
-ADD crontab /etc/cron.d/hello-cron
- 
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/hello-cron
-RUN crontab /etc/cron.d/hello-cron
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
