@@ -27,8 +27,8 @@ RUN chmod 0644 /root/.gnupg/gpg-agent.conf
 RUN chmod 0700 /root/.gnupg
 COPY incexcllist /conf/incexcllist
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint
+RUN chmod +x /usr/local/bin/entrypoint
 
-CMD ["./usr/local/bin/entrypoint.sh"]
+CMD ["entrypoint"]
 
