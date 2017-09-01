@@ -30,5 +30,5 @@ COPY incexcllist /conf/incexcllist
 COPY entrypoint.sh /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
 
-CMD ["entrypoint"]
+ENTRYPOINT ["entrypoint"]
 
