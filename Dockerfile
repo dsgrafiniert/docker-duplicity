@@ -25,6 +25,7 @@ COPY duplicity_script.sh /opt/duplicity/duplicity_script.sh.template
 COPY gpg-agent.conf /root/.gnupg/gpg-agent.conf
 RUN chmod 0644 /root/.gnupg/gpg-agent.conf
 RUN chmod 0700 /root/.gnupg
+RUN ln -sf /proc/$$/fd/1 /var/log/test.log
 COPY incexcllist /conf/incexcllist
 
 COPY entrypoint.sh /usr/local/bin/entrypoint
